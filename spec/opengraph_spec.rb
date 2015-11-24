@@ -32,7 +32,7 @@ describe OpenGraph do
     it 'should catch errors' do
       stub_request(:get, 'http://example.com').to_return(:status => 404)
       OpenGraph.fetch('http://example.com').should be_falsey
-      RestClient.should_receive(:get).with('http://example.com').and_raise(SocketError)
+      allow(RestClient).to receive(:get).with('http://example.com').and_raise(SocketError)
       OpenGraph.fetch('http://example.com').should be_falsey
     end
   end

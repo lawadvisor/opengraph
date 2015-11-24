@@ -45,7 +45,7 @@ PLATFORMS
 
 DEPENDENCIES
   opengraph!
-  rspec (>= 2.0.0)
+  rspec (~> 3.4.0)
   webmock
 
 BUNDLED WITH
