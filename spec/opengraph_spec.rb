@@ -6,8 +6,8 @@ describe OpenGraph do
   
   describe '.parse' do
     it 'should return false if there isnt valid Open Graph info' do
-      OpenGraph.parse("").should be_false
-      OpenGraph.parse(partial).should be_false
+      OpenGraph.parse("").should be_falsey
+      OpenGraph.parse(partial).should be_falsey
     end
     
     it 'should otherwise return an OpenGraph::Object' do
@@ -31,9 +31,9 @@ describe OpenGraph do
     
     it 'should catch errors' do
       stub_request(:get, 'http://example.com').to_return(:status => 404)
-      OpenGraph.fetch('http://example.com').should be_false
+      OpenGraph.fetch('http://example.com').should be_falsey
       RestClient.should_receive(:get).with('http://example.com').and_raise(SocketError)
-      OpenGraph.fetch('http://example.com').should be_false
+      OpenGraph.fetch('http://example.com').should be_falsey
     end
   end
 end
