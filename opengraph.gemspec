@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'hashie'
   spec.add_dependency 'nokogiri', '~> 1.5'
-  spec.add_dependency 'rest-client', '~> 1.6.0'
+  spec.add_dependency 'rest-client', '~> 1.6'
   spec.add_development_dependency 'rspec', '~> 3.4.0'
   spec.add_development_dependency 'webmock'
 end
